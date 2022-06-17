@@ -15,19 +15,34 @@ const StyledHeader = styled.nav`
 const Logo = styled.img`
   height: 50px;
   width: 50px;
-`
+`;
+
+const BtnCabecalho = styled.a`
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 20px;
+  margin: 0 10px;
+  font-weight: 600;
+  border: 2px solid white;
+  
+  background-color: ${(props) => (props.primary ? "#ffffff" : corPrimaria)};
+  color: ${(props) => (props.primary ? corPrimaria : "#ffffff")};
+`;
 
 const Cabecalho = () => {
   return (
     <StyledHeader>
       <Logo src={bank_logo} alt="Logo Smart Bank" />
       <div>
-        <a className="btn-secundario" href="https://google.com">
+        <BtnCabecalho
+          href="#"
+          primary
+        >
           Ajuda
-        </a>
-        <a className="btn-primario" href="https://google.com">
+        </BtnCabecalho>
+        <BtnCabecalho href="#">
           Sair
-        </a>
+        </BtnCabecalho>
       </div>
     </StyledHeader>
   );
